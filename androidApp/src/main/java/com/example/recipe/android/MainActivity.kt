@@ -53,11 +53,23 @@ class MainActivity : ComponentActivity() {
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MyApp(openRecipeDetails: (Recipe) -> Unit) {
-    Scaffold (
-        content = {
-            RecipeContent(openRecipeDetails = openRecipeDetails)
-        }
-    )
+    
+    Column() {
+        Text(
+            text = "Recipes",
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 18.dp, vertical = 24.dp)
+        )
+
+        Scaffold (
+            content = {
+                RecipeContent(openRecipeDetails = openRecipeDetails)
+            }
+        )
+    }
 }
 
 @Composable
